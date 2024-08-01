@@ -4,6 +4,7 @@
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
   import { getAuth,
     onAuthStateChanged,
+    createUserWithEmailAndPassword,
    } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
   
   const firebaseConfig = {
@@ -26,19 +27,16 @@
   const auth = getAuth(app);
   // console.log(auth);
 
-  import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-const auth = getAuth();
+// const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("user is loged in")
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
+    console.log("user is loged in===>")
+  
     const uid = user.uid;
     // ...
   } else {
-    console.log("user is not loged in")
-    // User is signed out
+    console.log("user is not loged in===>")
     // ...
   }
 });
