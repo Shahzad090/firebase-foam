@@ -19,16 +19,15 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-//  console.log(app);
   const analytics = getAnalytics(app);
-
-  
-
   const auth = getAuth(app);
-  // console.log(auth);
+  
+const signup_email = document.getElementById('signup_email');
+const signup_password = document.getElementById('signup_password');
+const signup_Btn = document.getElementById('signup_Btn');
 
+signup_Btn.addEventListener("click".creatUserAccount);
 
-// const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("user is loged in===>")
@@ -40,3 +39,8 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
+
+function createUserAccount(){
+  console.log("email", signup_email.value);
+  console.log("password", signup_password.value);
+}
