@@ -22,25 +22,37 @@
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
   
-const signup_email = document.getElementById('signup_email');
-const signup_password = document.getElementById('signup_password');
-const signup_Btn = document.getElementById('signup_Btn');
+const signup_email = document.getElementById("signup_email");
+const signup_password = document.getElementById("signup_password");
+const Signup_btn = document.getElementById("Signup_btn");
 
-signup_Btn.addEventListener("click".creatUserAccount);
+Signup_btn.addEventListener("click" .createUserAccount);
 
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log("user is loged in===>")
+//   if (user) {
+//     // console.log("user is loged in===>")
   
-    const uid = user.uid;
-    // ...
-  } else {
-    console.log("user is not loged in===>")
-    // ...
-  }
-});
+//     const uid = user.uid;
+//     // ...
+//   } else {
+//     // console.log("user is not loged in===>")
+//     // ...
+//   }
+// });
 
-function createUserAccount(){
+function createUserAccount() {
   console.log("email", signup_email.value);
-  console.log("password", signup_password.value);
+  console.log("password",signup_password.value);
 }
+// const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    
+    const user = userCredential.user;
+   
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+   
+  });
