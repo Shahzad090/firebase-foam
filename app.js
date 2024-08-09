@@ -29,20 +29,20 @@ const Signup_btn = document.getElementById("Signup_btn");
 Signup_btn.addEventListener("click" .createUserAccount);
 
 onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // console.log("user is loged in===>")
+  if (user) {
+    // console.log("user is loged in===>")
   
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     // console.log("user is not loged in===>")
-//     // ...
-//   }
-// });
+    const uid = user.uid;
+    // ...
+  } else {
+    // console.log("user is not loged in===>")
+    // ...
+  }
+});
 
 function createUserAccount() {
-  console.log("email", signup_email.value);
-  console.log("password",signup_password.value);
+  // console.log("email", signup_email.value);
+  // console.log("password",signup_password.value);
 }
 // const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password)
@@ -54,5 +54,4 @@ createUserWithEmailAndPassword(auth, email, password)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-   
   });
